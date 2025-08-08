@@ -1,0 +1,385 @@
+# RAG System .gitignore
+
+# ==============================================================================
+# ENVIRONMENT & SECRETS
+# ==============================================================================
+
+# Environment variables (CRITICAL - Contains API keys!)
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.backup
+
+# API Keys and secrets
+api_keys.txt
+secrets.json
+config/secrets.py
+**/api_keys/**
+**/secrets/**
+
+# ==============================================================================
+# PYTHON
+# ==============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff
+instance/
+.webassets-cache
+
+# Scrapy stuff
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+rag_env/
+hackathon_env/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# ==============================================================================
+# VECTOR DATABASE & MODEL FILES
+# ==============================================================================
+
+# FAISS indices
+*.faiss
+*.index
+faiss_indices/
+vector_indices/
+embeddings_cache/
+
+# ChromaDB data
+chroma_db/
+.chroma/
+*.chroma
+chromadb_data/
+
+# Embedding caches
+embeddings/
+cached_embeddings/
+*.pkl
+*.pickle
+embedding_cache.json
+
+# Model files (if downloading models locally)
+models/
+*.model
+*.bin
+pytorch_model.bin
+tf_model.h5
+model.safetensors
+
+# Tokenizer files
+tokenizer.json
+vocab.txt
+special_tokens_map.json
+tokenizer_config.json
+
+# ==============================================================================
+# DOCUMENT PROCESSING
+# ==============================================================================
+
+# Processed documents
+processed_docs/
+chunked_docs/
+extracted_text/
+temp_docs/
+
+# PDF files (might be large)
+*.pdf
+documents/*.pdf
+data/*.pdf
+
+# Temporary files from document processing
+temp_*.txt
+temp_*.json
+processing_*.log
+
+# ==============================================================================
+# CACHING & TEMPORARY FILES
+# ==============================================================================
+
+# Application caches
+cache/
+.cache/
+app_cache/
+query_cache/
+response_cache/
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+logs/
+app.log
+error.log
+debug.log
+performance.log
+
+# ==============================================================================
+# DEVELOPMENT & IDE
+# ==============================================================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ==============================================================================
+# SYSTEM FILES
+# ==============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ==============================================================================
+# HACKATHON SPECIFIC
+# ==============================================================================
+
+# Downloaded test files
+test_policy.pdf
+sample_documents/
+hackathon_data/
+
+# Performance benchmarks
+benchmarks/
+performance_results/
+*.benchmark
+timing_results.json
+
+# Demo files
+demo/
+presentation/
+*.pptx
+*.ppt
+
+# Backup files
+backup/
+*.backup
+*.bak
+
+# Competition submissions
+submission/
+final_submission/
+
+# ==============================================================================
+# NETWORKING & DEPLOYMENT
+# ==============================================================================
+
+# ngrok
+ngrok
+ngrok.exe
+ngrok.yml
+ngrok.log
+
+# Docker
+Dockerfile.bak
+docker-compose.override.yml
+.dockerignore.bak
+
+# ==============================================================================
+# MONITORING & ANALYTICS
+# ==============================================================================
+
+# Monitoring data
+metrics/
+analytics/
+*.metrics
+performance_data/
+
+# Profiling results
+*.prof
+*.profile
+profiling_results/
+
+# ==============================================================================
+# CUSTOM ADDITIONS (Add your project-specific ignores here)
+# ==============================================================================
+
+# Your custom files to ignore
+# my_custom_config.py
+# local_test_data/
+# experimental_features/
+
+# Test result files
+accuracy_test_results_*.csv
+accuracy_report_*.txt
