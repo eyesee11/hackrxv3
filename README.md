@@ -1,8 +1,8 @@
-# Lightning-Fast RAG System
+# Ultra-Fast RAG System
 
-A high-performance Retrieval-Augmented Generation (RAG) system designed for <300ms response times with local deployment.
+A high-performance completely open source Retrieval-Augmented Generation (RAG) system designed for <30ms average response times with local deployment.
 
-## 🚀 Features
+## Features
 
 - **Ultra-Fast Performance**: <300ms average response time
 - **FAISS Vector Store**: Lightning-fast similarity search
@@ -11,17 +11,17 @@ A high-performance Retrieval-Augmented Generation (RAG) system designed for <300
 - **Circuit Breakers**: Robust error handling and API reliability
 - **Hackathon Ready**: Compliant with HackRx evaluation endpoint
 
-## 📊 Performance Profile
+## Performance Profile
 
 | Component | Expected Time | Optimization |
 |-----------|---------------|--------------|
 | Vector search | 1-5ms | ChromaDB RAM-only |
 | Google embedding | 30-80ms | Batch processing + cache |
 | Gemini generation | 100-200ms | Optimized prompts |
-| **Total (cache miss)** | **136-295ms** | ✅ Under target |
-| **Total (cache hit)** | **6-17ms** | 🚀 Lightning fast |
+| **Total (cache miss)** | **136-295ms** |  Under target |
+| **Total (cache hit)** | **6-17ms** | Lightning fast |
 
-## 🛠️ Quick Setup
+## Local Setup
 
 ```bash
 # 1. Clone and setup
@@ -44,15 +44,15 @@ TOGETHER_API_KEY=your-together-api-key  # Optional fallback
 ngrok http 8000
 ```
 
-## 🏗️ Architecture
+## Architecture
 
 ```
-📄 PDF Input → 🔄 Processing → 🧠 Embeddings → 💾 Vector Store
+PDF Input → Processing → Embeddings → Vector Store (Either one of Pinecone or ChromaDB)
                                                        ↓
-🎯 Response ← 🤖 LLM Generation ← 🔍 Context ← 🔎 Similarity Search
+Response ← LLM Generation ← Context ← Similarity Search
 ```
 
-## 🚀 Enhanced RAG System
+## Enhanced RAG System
 
 The enhanced version (`start_enhanced.sh`) includes additional improvements:
 
@@ -109,7 +109,7 @@ http://localhost:8000/dashboard
    - Parallel processing where possible
    - Comprehensive error handling
 
-## 🎯 API Endpoints
+## API Endpoints
 
 ### Hackathon Endpoint
 ```http
@@ -132,7 +132,7 @@ Content-Type: application/json
 - `POST /ask` - Single question endpoint
 - `GET /cache/stats` - Cache performance
 
-## ⚡ Performance Optimizations
+## Performance Optimizations
 
 ### 1. Multi-Level Caching
 ```python
@@ -165,7 +165,7 @@ gemini_breaker = CircuitBreaker(failure_threshold=3, timeout=30)
 embedding_breaker = CircuitBreaker(failure_threshold=3, timeout=30)
 ```
 
-## 🔧 Configuration
+## Configuration
 
 ### Environment Variables
 ```bash
@@ -182,7 +182,7 @@ MAX_CONTEXT_TOKENS=2000               # Context window limit
 - **Storage**: SSD for faster model loading
 - **Network**: Stable internet for API calls
 
-## 📈 Monitoring
+## Monitoring
 
 ### Metrics Dashboard
 Visit `http://localhost:8000/metrics` for real-time system stats:
@@ -193,13 +193,13 @@ Visit `http://localhost:8000/metrics` for real-time system stats:
 
 ### Performance Logs
 ```bash
-✅ PDF downloaded and extracted in 1247.23ms, 45231 characters
-✅ Indexed 127 chunks in 3421.45ms
-✅ Answered question in 156.78ms
-🎯 Complete pipeline finished in 4825.46ms
+ PDF downloaded and extracted in 1247.23ms, 45231 characters
+ Indexed 127 chunks in 3421.45ms
+ Answered question in 156.78ms
+ Complete pipeline finished in 4825.46ms
 ```
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Test system health
@@ -214,7 +214,7 @@ curl -X POST "http://localhost:8000/ask" \
 ./test_rag.sh
 ```
 
-## 🚨 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -240,9 +240,9 @@ export LOG_LEVEL=DEBUG
 python main.py
 ```
 
-## 🏆 Hackathon Compliance
+## Hackathon Compliance
 
-This system is specifically designed for the HackRx evaluation:
+This system was specifically designed for the HackRx evaluation:
 
 - ✅ Exact endpoint specification (`/hackrx/run`)
 - ✅ Required authorization token support
@@ -251,7 +251,7 @@ This system is specifically designed for the HackRx evaluation:
 - ✅ Proper error handling
 - ✅ Performance optimization (<300ms target)
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 - [ ] GPU acceleration for embeddings
 - [ ] Distributed vector storage
